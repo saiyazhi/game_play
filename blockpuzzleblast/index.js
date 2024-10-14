@@ -1,7 +1,7 @@
 System.register(["./application.js"], function (_export, _context) {
   "use strict";
 
-  var Application, canvas, $p, bcr, application;
+  var Application, application;
   function topLevelImport(url) {
     return System["import"](url);
   }
@@ -10,11 +10,6 @@ System.register(["./application.js"], function (_export, _context) {
       Application = _applicationJs.Application;
     }],
     execute: function () {
-      canvas = document.getElementById('GameCanvas');
-      $p = canvas.parentElement;
-      bcr = $p.getBoundingClientRect();
-      canvas.width = bcr.width;
-      canvas.height = bcr.height;
       application = new Application();
       topLevelImport('cc').then(function (engine) {
         return application.init(engine);
